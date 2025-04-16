@@ -80,6 +80,7 @@ void ds3231Init(void)
     }
 }
 
+// RC522扫描卡
 void RC522Scan(void)
 {
     uint8_t Card_Type1[2];
@@ -137,6 +138,7 @@ void RC522Scan(void)
     }
 }
 
+// RC522写卡
 void RC522WriteCard(uint8_t *Card_Data)
 {
     uint8_t Card_Type1[2];
@@ -414,7 +416,7 @@ void totalInit(void)
     status.mode = NORMALMOD;
 }
 /*
-*/
+ */
 void loop(void)
 {
     // TODO:主循环 一帧
