@@ -19,7 +19,13 @@
     "lvgls/lvgl/demos/transform",
     "lvgls/lvgl/demos/vector_graphic",
     "lvgls/lvgl/demos/widgets",
-    "lvgls/lvgl/src"
+    "lvgls/lvgl/src",
+    "lvgls/lvgl_app/generated",
+    "lvgls/lvgl_app/custom",
+    "lvgls/lvgl_app",
+    "lvgls/lvgl_app/generated/images",
+    "lvgls/lvgl_app/generated/guider_fonts",
+    "lvgls/lvgl_app/generated/guider_customer_fonts"
   ],
   "virtualFolder": {
     "name": "<virtual_root>",
@@ -157,10 +163,17 @@
           "lvgls/lvgl/demos/benchmark",
           "lvgls/lvgl/demos/widgets",
           "lvgls/lvgl/demos/scroll",
-          "lvgls/lvgl/demos/music"
+          "lvgls/lvgl/demos/music",
+          "lvgls/lvgl_app/generated",
+          "lvgls/lvgl_app/generated/guider_customer_fonts",
+          "lvgls/lvgl_app/generated/guider_fonts",
+          "lvgls/lvgl_app/generated/images",
+          "lvgls/lvgl_app/custom",
+          "lvgls/lvgl_app"
         ],
         "libList": [
-          "lvgls/lvgl"
+          "lvgls/lvgl",
+          "lvgls/lvgl_app"
         ],
         "defineList": [
           "DEBUG",
