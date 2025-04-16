@@ -21,18 +21,19 @@ typedef struct
   
 	lv_obj_t *screen;
 	bool screen_del;
+	lv_obj_t *screen_cont_1;
 	lv_obj_t *screen_img_1;
-	lv_obj_t *screen_btn_1;
-	lv_obj_t *screen_btn_1_label;
 	lv_obj_t *screen_digital_clock_1;
 	lv_obj_t *screen_datetext_1;
-	lv_obj_t *screen_exportSuccess;
-	lv_obj_t *screen_exportSuccess_item0;
-	lv_obj_t *screen_spangroup_1;
-	lv_span_t *screen_spangroup_1_span;
-	lv_obj_t *screen_slider_1;
-	lv_obj_t *Export;
-	bool Export_del;
+	lv_obj_t *screen_label_1;
+	lv_obj_t *screen_btn_2;
+	lv_obj_t *screen_btn_2_label;
+	lv_obj_t *screen_btn_3;
+	lv_obj_t *screen_btn_3_label;
+	lv_obj_t *screen_btn_4;
+	lv_obj_t *screen_btn_4_label;
+	lv_obj_t *screen_btn_5;
+	lv_obj_t *screen_btn_5_label;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -61,14 +62,13 @@ extern lv_ui guider_ui;
 
 
 void setup_scr_screen(lv_ui *ui);
-void setup_scr_Export(lv_ui *ui);
-LV_IMAGE_DECLARE(_150_58103072_RGB565A8_480x320);
+LV_IMAGE_DECLARE(_201_67767892log3_p2_RGB565A8_439x310);
 
-LV_FONT_DECLARE(lv_font_youyuan_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_24)
+LV_FONT_DECLARE(lv_font_youyuan_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
-LV_FONT_DECLARE(lv_font_youyuan_12)
-LV_FONT_DECLARE(lv_font_youyuan_28)
+LV_FONT_DECLARE(lv_font_youyuan_10)
 
 
 #ifdef __cplusplus

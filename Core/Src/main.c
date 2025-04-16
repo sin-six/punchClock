@@ -20,7 +20,6 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
-#include "events_init.h"
 #include "fatfs.h"
 #include "i2c.h"
 #include "sdio.h"
