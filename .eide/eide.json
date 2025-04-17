@@ -56,13 +56,13 @@
         "name": "lvgl_porting",
         "files": [
           {
-            "path": "../LVGL_EIDETest/lvgls/lv_conf.h"
+            "path": "lvgls/lv_conf.h"
           },
           {
-            "path": "../LVGL_EIDETest/lvgls/lv_port_disp.c"
+            "path": "lvgls/lv_port_disp.c"
           },
           {
-            "path": "../LVGL_EIDETest/lvgls/lv_port_indev.c"
+            "path": "lvgls/lv_port_indev.c"
           }
         ],
         "folders": []
