@@ -130,7 +130,7 @@
           "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
           "Drivers/CMSIS/Device/ST/STM32F4xx/Include",
           "Drivers/CMSIS/Include",
-          "c:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include",
+          "c:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/arm-none-eabi/include",
           "HARDWARE",
           "HARDWARE/AT24CXX",
           "HARDWARE/DS3231",
