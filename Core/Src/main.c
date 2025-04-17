@@ -132,7 +132,7 @@ int main(void)
     // totalInit();
     delay_init(100);
     LCD_Init();
-    LCD_direction(1);
+    LCD_direction(3);
     TP_Init();
     lv_init();
     lv_port_disp_init();

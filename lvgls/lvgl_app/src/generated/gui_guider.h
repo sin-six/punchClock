@@ -19,21 +19,26 @@ extern "C" {
 typedef struct
 {
   
-	lv_obj_t *screen;
-	bool screen_del;
-	lv_obj_t *screen_cont_1;
-	lv_obj_t *screen_img_1;
-	lv_obj_t *screen_digital_clock_1;
-	lv_obj_t *screen_datetext_1;
-	lv_obj_t *screen_label_1;
-	lv_obj_t *screen_btn_2;
-	lv_obj_t *screen_btn_2_label;
-	lv_obj_t *screen_btn_3;
-	lv_obj_t *screen_btn_3_label;
-	lv_obj_t *screen_btn_4;
-	lv_obj_t *screen_btn_4_label;
-	lv_obj_t *screen_btn_5;
-	lv_obj_t *screen_btn_5_label;
+	lv_obj_t *MainMenuScreen;
+	bool MainMenuScreen_del;
+	lv_obj_t *MainMenuScreen_Menu;
+	lv_obj_t *MainMenuScreen_img_1;
+	lv_obj_t *MainMenuScreen_label_1;
+	lv_obj_t *MainMenuScreen_userInfoButton;
+	lv_obj_t *MainMenuScreen_userInfoButton_label;
+	lv_obj_t *MainMenuScreen_btn_3;
+	lv_obj_t *MainMenuScreen_btn_3_label;
+	lv_obj_t *MainMenuScreen_btn_4;
+	lv_obj_t *MainMenuScreen_btn_4_label;
+	lv_obj_t *MainMenuScreen_btn_5;
+	lv_obj_t *MainMenuScreen_btn_5_label;
+	lv_obj_t *MainMenuScreen_userInfo;
+	lv_obj_t *MainMenuScreen_btn_6;
+	lv_obj_t *MainMenuScreen_btn_6_label;
+	lv_obj_t *MainMenuScreen_spangroup_1;
+	lv_span_t *MainMenuScreen_spangroup_1_span;
+	lv_obj_t *MainMenuScreen_digital_clock_1;
+	lv_obj_t *MainMenuScreen_datetext_1;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -61,11 +66,11 @@ void init_keyboard(lv_ui *ui);
 extern lv_ui guider_ui;
 
 
-void setup_scr_screen(lv_ui *ui);
+void setup_scr_MainMenuScreen(lv_ui *ui);
 LV_IMAGE_DECLARE(_201_67767892log3_p2_RGB565A8_439x310);
 
-LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_24)
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_youyuan_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_youyuan_10)

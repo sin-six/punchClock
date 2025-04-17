@@ -149,7 +149,7 @@ u8 FT6336_Init(void)
     delay_ms(10);
     FT_RST(1); // 释放复位
     delay_ms(500);
-    u8 tmp  = 1;
+    u8 tmp  = 0;
     temp[0] = 0;
     // FT6336_WR_Reg(FT_DEVIDE_MODE, temp, 1); // 进入正常操作模式
     FT6336_WR_Reg(FT_ID_G_MODE, &tmp, 1);    // 查询模式
@@ -200,46 +200,46 @@ u8 FT6336_Scan(void)
     u8 res = 0;
     u8 temp;
     u8 mode;
-    static u8 t = 0; // 控制查询间隔,从而降低CPU占用率
-    t++;
-    if ((t % 10) == 0 || t < 20) // 空闲时,每进入20次CTP_Scan函数才检测1次,从而节省CPU使用率
-    {
-        FT6336_RD_Reg(FT_REG_NUM_FINGER, &mode, 1); // 读取触摸点的状态
-        if (mode && (mode < 3)) {
-            temp       = 0XFF << mode; // 将点的个数转换为1的位数,匹配tp_dev.sta定义
-            tp_dev.sta = (~temp) | TP_PRES_DOWN | TP_CATH_PRES;
-            for (i = 0; i < CTP_MAX_TOUCH; i++) {
-                FT6336_RD_Reg(FT6336_TPX_TBL[i], buf, 4); // 读取XY坐标值
-                if (tp_dev.sta & (1 << i))                // 触摸有效?
-                {
-                    switch (lcddev.dir) {
-                        case 0:
-                            tp_dev.x[i] = ((u16)(buf[0] & 0X0F) << 8) + buf[1];
-                            tp_dev.y[i] = ((u16)(buf[2] & 0X0F) << 8) + buf[3];
-                            break;
-                        case 1:
-                            tp_dev.y[i] = lcddev.height - (((u16)(buf[0] & 0X0F) << 8) + buf[1]);
-                            tp_dev.x[i] = ((u16)(buf[2] & 0X0F) << 8) + buf[3];
-                            break;
-                        case 2:
-                            tp_dev.x[i] = lcddev.width - (((u16)(buf[0] & 0X0F) << 8) + buf[1]);
-                            tp_dev.y[i] = lcddev.height - (((u16)(buf[2] & 0X0F) << 8) + buf[3]);
-                            break;
-                        case 3:
-                            tp_dev.y[i] = ((u16)(buf[0] & 0X0F) << 8) + buf[1];
-                            tp_dev.x[i] = lcddev.width - (((u16)(buf[2] & 0X0F) << 8) + buf[3]);
-                            break;
-                    }
-                    // if((buf[0]&0XF0)!=0X80)tp_dev.x[i]=tp_dev.y[i]=0;//必须是contact事件，才认为有效
-                    // printf("x[%d]:%d,y[%d]:%d\r\n",i,tp_dev.x[i],i,tp_dev.y[i]);
+    // static u8 t = 0; // 控制查询间隔,从而降低CPU占用率
+    // t++;
+    // if ((t % 10) == 0 || t < 5) // 空闲时,每进入20次CTP_Scan函数才检测1次,从而节省CPU使用率
+
+    FT6336_RD_Reg(FT_REG_NUM_FINGER, &mode, 1); // 读取触摸点的状态
+    if (mode && (mode < 3)) {
+        temp       = 0XFF << mode; // 将点的个数转换为1的位数,匹配tp_dev.sta定义
+        tp_dev.sta = (~temp) | TP_PRES_DOWN | TP_CATH_PRES;
+        for (i = 0; i < CTP_MAX_TOUCH; i++) {
+            FT6336_RD_Reg(FT6336_TPX_TBL[i], buf, 4); // 读取XY坐标值
+            if (tp_dev.sta & (1 << i))                // 触摸有效?
+            {
+                switch (lcddev.dir) {
+                    case 0:
+                        tp_dev.x[i] = ((u16)(buf[0] & 0X0F) << 8) + buf[1];
+                        tp_dev.y[i] = ((u16)(buf[2] & 0X0F) << 8) + buf[3];
+                        break;
+                    case 1:
+                        tp_dev.y[i] = lcddev.height - (((u16)(buf[0] & 0X0F) << 8) + buf[1]);
+                        tp_dev.x[i] = ((u16)(buf[2] & 0X0F) << 8) + buf[3];
+                        break;
+                    case 2:
+                        tp_dev.x[i] = lcddev.width - (((u16)(buf[0] & 0X0F) << 8) + buf[1]);
+                        tp_dev.y[i] = lcddev.height - (((u16)(buf[2] & 0X0F) << 8) + buf[3]);
+                        break;
+                    case 3:
+                        tp_dev.y[i] = ((u16)(buf[0] & 0X0F) << 8) + buf[1];
+                        tp_dev.x[i] = lcddev.width - (((u16)(buf[2] & 0X0F) << 8) + buf[3]);
+                        break;
                 }
+                // if((buf[0]&0XF0)!=0X80)tp_dev.x[i]=tp_dev.y[i]=0;//必须是contact事件，才认为有效
+                // printf("x[%d]:%d,y[%d]:%d\r\n",i,tp_dev.x[i],i,tp_dev.y[i]);
             }
-            res = 1;
-            if (tp_dev.x[0] == 0 && tp_dev.y[0] == 0)
-                mode = 0; // 读到的数据都是0,则忽略此次数据
-            t = 0;        // 触发一次,则会最少连续监测10次,从而提高命中率
         }
+        res = 1;
+        if (tp_dev.x[0] == 0 && tp_dev.y[0] == 0)
+            mode = 0; // 读到的数据都是0,则忽略此次数据
+        // t = 0;        // 触发一次,则会最少连续监测10次,从而提高命中率
     }
+
     if (mode == 0) // 无触摸点按下
     {
         if (tp_dev.sta & TP_PRES_DOWN) // 之前是被按下的
@@ -252,7 +252,5 @@ u8 FT6336_Scan(void)
             tp_dev.sta &= 0XE0; // 清除点有效标记
         }
     }
-    if (t > 240)
-        t = 10; // 重新从10开始计数
     return res;
 }

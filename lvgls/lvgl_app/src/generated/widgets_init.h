@@ -24,10 +24,10 @@ void digital_clock_count(int * hour, int * minute, int * seconds, char * meridie
 #endif
 
 
-void screen_digital_clock_1_timer(lv_timer_t *timer);
-void screen_datetext_1_event_handler(lv_event_t *e);
-void screen_datetext_1_calendar_event_handler(lv_event_t *e);
-void screen_datetext_1_init_calendar(lv_obj_t *obj, char * s);
+void MainMenuScreen_digital_clock_1_timer(lv_timer_t *timer);
+void MainMenuScreen_datetext_1_event_handler(lv_event_t *e);
+void MainMenuScreen_datetext_1_calendar_event_handler(lv_event_t *e);
+void MainMenuScreen_datetext_1_init_calendar(lv_obj_t *obj, char * s);
 
 
 #ifdef __cplusplus
