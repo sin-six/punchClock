@@ -15,6 +15,7 @@
 #include "AT24CXX/AT24CXX.h"
 #include "main.h"
 #include "adc.h"
+#include "dataStruct.h"
 
 extern Status status;
 
@@ -22,6 +23,8 @@ extern Status status;
 #define TOUCHEVENT 2
 
 #define DEBUG
+
+
 
 // 时间格式
 typedef struct Time

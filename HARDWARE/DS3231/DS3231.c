@@ -502,6 +502,26 @@ extern "C"
         return (DS3231_GetRegByte(DS3231_TEMP_LSB) >> 6) * 25;
     }
 
+
+    // 获取当前时间并格式化为 2025：04：23：20：28：20 格式
+uint64_t get_current_time(void) {
+    uint16_t year = DS3231_GetYear();
+    uint8_t month = DS3231_GetMonth();
+    uint8_t day = DS3231_GetDate();
+    uint8_t hour = DS3231_GetHour();
+    uint8_t minute = DS3231_GetMinute();
+    uint8_t second = DS3231_GetSecond();
+    return (uint64_t)year * 10000000000ULL +
+           (uint64_t)month * 100000000ULL +
+           (uint64_t)day * 1000000ULL +
+           (uint64_t)hour * 10000ULL +
+           (uint64_t)minute * 100ULL +
+           (uint64_t)second;
+}
+
+
+
+
 #ifdef __cplusplus
 }
 #endif

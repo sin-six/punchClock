@@ -29,8 +29,8 @@ __attribute__((aligned(8))) typedef struct UserInfo {
  */
 __attribute__((aligned(8))) typedef struct CheckInfo {
     uint64_t ID;
-    uint64_t startTime;
-    uint64_t endTime;
+    uint64_t startTime;//2025-6-25:12-42-30
+    uint64_t endTime;//2025-6-25:12-50-30
 } CheckInfo;
 
 #endif /* _DATASTRUCT_H_ */

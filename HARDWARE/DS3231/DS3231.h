@@ -107,6 +107,10 @@ uint8_t DS3231_GetHour(void);
 uint8_t DS3231_GetMinute(void);
 uint8_t DS3231_GetSecond(void);
 
+
+// 获取当前时间并格式化为 2025：04：23：20：28：20 格式20250423202820
+uint64_t get_current_time(void);
+
 void DS3231_SetDayOfWeek(uint8_t dow);
 void DS3231_SetDate(uint8_t date);
 void DS3231_SetMonth(uint8_t month);
@@ -118,6 +122,8 @@ void DS3231_SetSecond(uint8_t second);
 
 void DS3231_SetFullTime(uint8_t hour_24mode, uint8_t minute, uint8_t second);
 void DS3231_SetFullDate(uint8_t date, uint8_t month, uint8_t dow, uint16_t year);
+
+
 
 uint8_t DS3231_DecodeBCD(uint8_t bin);
 uint8_t DS3231_EncodeBCD(uint8_t dec);

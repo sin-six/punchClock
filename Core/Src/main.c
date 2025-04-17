@@ -18,18 +18,23 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "RC522.h"
 #include "adc.h"
 #include "dma.h"
 #include "fatfs.h"
 #include "i2c.h"
 #include "sdio.h"
 #include "spi.h"
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_def.h"
+#include "stm32f4xx_hal_uart.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "function.h"
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "lvgl.h"
@@ -42,6 +47,14 @@
 #include "lcd.h"
 #include "gui_guider.h"
 #include "events_init.h"
+
+///rc
+#include "dataStruct.h"
+#include "function.h"
+
+////
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -73,6 +86,28 @@ PUTCHAR_PROTOTYPE
 
 /* USER CODE BEGIN PV */
 
+///rc
+#define MAX_CHECK_RECORDS 10
+CheckInfo checkRecords[MAX_CHECK_RECORDS] = {0}; // 全局打卡记录数组
+int checkRecordCount = 0;                        // 记录计数器
+
+
+// 根据学号查找打卡记录索引（-1表示未找到）
+int find_student_record(uint64_t studentID) {
+    for (int i = 0; i < checkRecordCount; i++) {
+        if (checkRecords[i].ID == studentID && checkRecords[i].endTime == 0) {
+            return i; // 找到未结束的打卡记录
+        }
+    }
+    return -1; // 未找到或记录已结束
+}
+
+
+
+///
+
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,7 +137,7 @@ int main(void)
     HAL_Init();
 
     /* USER CODE BEGIN Init */
-
+    
     /* USER CODE END Init */
 
     /* Configure the system clock */
@@ -139,6 +174,16 @@ int main(void)
     lv_port_indev_init();
     setup_ui(&guider_ui);
     events_init(&guider_ui);
+
+
+    ////rc
+    ds3231Init();
+    RC522_Init();
+
+    ////
+    // Initialize the event queue
+
+
     // lv_demo_benchmark();
     /* USER CODE END 2 */
 
@@ -147,6 +192,17 @@ int main(void)
     while (1) {
         // loop();
         lv_task_handler();
+        
+        //rc
+        RC522Scan();
+        
+        
+
+        // Add any additional processing or handling here if needed
+        // For example, you might want to add a delay or check for specific conditions
+
+
+
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

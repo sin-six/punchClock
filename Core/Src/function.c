@@ -4,6 +4,9 @@
 #include "RC522/RC522.h"
 #include "Status.h"
 #include "stm32f4xx_hal.h"
+#include <stdio.h>
+
+#define MAX_CHECK_RECORDS 10
 
 Status status       = {0};
 Time nowTime        = {0};
@@ -80,6 +83,29 @@ void ds3231Init(void)
     }
 }
 
+
+
+
+//rc
+extern CheckInfo checkRecords[MAX_CHECK_RECORDS] = {0}; // 全局打卡记录数组
+extern int checkRecordCount = 0;                        // 记录计数器
+
+
+// 根据学号查找打卡记录索引（-1表示未找到）
+int find_student_record(uint64_t studentID) {
+    for (int i = 0; i < checkRecordCount; i++) {
+        if (checkRecords[i].ID == studentID && checkRecords[i].endTime == 0) {
+            return i; // 找到未结束的打卡记录
+        }
+    }
+    return -1; // 未找到或记录已结束
+}
+
+
+
+//
+
+
 // RC522扫描卡
 void RC522Scan(void)
 {
@@ -88,6 +114,11 @@ void RC522Scan(void)
     uint8_t Card_KEY[6] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff}; //{0x11,0x11,0x11,0x11,0x11,0x11};   //密码
     uint8_t Card_Data[16];
     uint8_t status;
+
+
+    uint64_t currentTime = get_current_time(); // 获取当前时间
+    uint64_t studentID = 0; // 存储解析后的学号（假设为4字节卡号或从卡片读取的学号）
+
     if (PcdRequest(0x26, Card_Type1) == MI_OK) // 寻卡
     {
         status = PcdAnticoll(Card_ID); // 防冲撞
@@ -127,6 +158,52 @@ void RC522Scan(void)
             return;
         } else {
             // TODO:处理学号以及校验码
+
+            // 解析学号（这里假设学号为前4字节数据）
+            studentID = ((uint64_t)Card_Data[0] << 24) |
+                ((uint64_t)Card_Data[1] << 16) |
+                ((uint64_t)Card_Data[2] << 8) |
+                Card_Data[3];
+
+                int recordIndex = find_student_record(studentID);
+                if (recordIndex != -1) {
+                    // 存在未结束的打卡记录，标记为结束时间
+                    checkRecords[recordIndex].endTime = currentTime;
+
+                    //数据存储进EEPROM里
+                    
+
+
+                    
+
+        #ifdef DEBUG
+                    printf("Student %llu End Time: %llu\r\n", (unsigned long long)studentID, currentTime);
+        #endif
+                } else {
+                    // 无未结束记录，创建新的开始记录
+                    if (checkRecordCount < MAX_CHECK_RECORDS) {
+                        checkRecords[checkRecordCount].ID = studentID;
+                        checkRecords[checkRecordCount].startTime = currentTime;
+                        checkRecords[checkRecordCount].endTime = 0;
+                        checkRecordCount++;
+
+                        //数据存储进EEPROM里
+
+
+
+
+
+        #ifdef DEBUG
+                        printf("Student %llu Start Time: %llu\r\n", (unsigned long long)studentID, currentTime);
+        #endif
+                    } else {
+        #ifdef DEBUG
+                        printf("Max Record Reached!\r\n");
+        #endif
+                    }
+                }
+
+
         }
         status = PcdHalt(); // 停止卡片
         return;
@@ -196,6 +273,10 @@ void RC522WriteCard(uint8_t *Card_Data)
         return;
     }
 }
+
+
+
+
 
 // AT24初始化
 void at24Init(void)
