@@ -22,7 +22,6 @@ typedef struct
 	lv_obj_t *MainMenuScreen;
 	bool MainMenuScreen_del;
 	lv_obj_t *MainMenuScreen_Menu;
-	lv_obj_t *MainMenuScreen_img_1;
 	lv_obj_t *MainMenuScreen_label_1;
 	lv_obj_t *MainMenuScreen_userInfoButton;
 	lv_obj_t *MainMenuScreen_userInfoButton_label;
@@ -33,10 +32,11 @@ typedef struct
 	lv_obj_t *MainMenuScreen_btn_5;
 	lv_obj_t *MainMenuScreen_btn_5_label;
 	lv_obj_t *MainMenuScreen_userInfo;
+	lv_obj_t *MainMenuScreen_tileview_1;
+	lv_obj_t *MainMenuScreen_tileview_1_tile;
+	lv_obj_t *MainMenuScreen_table_1;
 	lv_obj_t *MainMenuScreen_btn_6;
 	lv_obj_t *MainMenuScreen_btn_6_label;
-	lv_obj_t *MainMenuScreen_spangroup_1;
-	lv_span_t *MainMenuScreen_spangroup_1_span;
 	lv_obj_t *MainMenuScreen_digital_clock_1;
 	lv_obj_t *MainMenuScreen_datetext_1;
 }lv_ui;
@@ -67,13 +67,13 @@ extern lv_ui guider_ui;
 
 
 void setup_scr_MainMenuScreen(lv_ui *ui);
-LV_IMAGE_DECLARE(_201_67767892log3_p2_RGB565A8_439x310);
 
 LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_24)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_youyuan_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_youyuan_10)
+LV_FONT_DECLARE(lv_font_youyuan_12)
 
 
 #ifdef __cplusplus
