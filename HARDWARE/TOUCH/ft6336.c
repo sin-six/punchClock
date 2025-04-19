@@ -149,12 +149,13 @@ u8 FT6336_Init(void)
     delay_ms(10);
     FT_RST(1); // 释放复位
     delay_ms(500);
-    u8 tmp  = 0;
-    temp[0] = 0;
-    // FT6336_WR_Reg(FT_DEVIDE_MODE, temp, 1); // 进入正常操作模式
+    u8 tmp = 0;
+    // temp[0] = 0;
+    // FT6336_WR_Reg(FT_DEVIDE_MODE, temp, 1);  // 进入正常操作模式
     FT6336_WR_Reg(FT_ID_G_MODE, &tmp, 1);    // 查询模式
-    temp[0] = 40;                            // 触摸有效值，22，越小越灵敏
+    temp[0] = 30;                            // 触摸有效值，22，越小越灵敏
     FT6336_WR_Reg(FT_ID_G_THGROUP, temp, 1); // 设置触摸有效值
+    FT6336_RD_Reg(FT_ID_G_FOCALTECH_ID, &temp[0], 1);
     FT6336_RD_Reg(FT_ID_G_FOCALTECH_ID, &temp[0], 1);
     if (temp[0] != 0x11) {
         return 1;
@@ -202,8 +203,8 @@ u8 FT6336_Scan(void)
     u8 mode;
     // static u8 t = 0; // 控制查询间隔,从而降低CPU占用率
     // t++;
-    // if ((t % 10) == 0 || t < 5) // 空闲时,每进入20次CTP_Scan函数才检测1次,从而节省CPU使用率
-
+    //  if ((t % 10) == 0 || t < 20) // 空闲时,每进入20次CTP_Scan函数才检测1次,从而节省CPU使用率
+    //  {
     FT6336_RD_Reg(FT_REG_NUM_FINGER, &mode, 1); // 读取触摸点的状态
     if (mode && (mode < 3)) {
         temp       = 0XFF << mode; // 将点的个数转换为1的位数,匹配tp_dev.sta定义
@@ -239,7 +240,7 @@ u8 FT6336_Scan(void)
             mode = 0; // 读到的数据都是0,则忽略此次数据
         // t = 0;        // 触发一次,则会最少连续监测10次,从而提高命中率
     }
-
+    //}
     if (mode == 0) // 无触摸点按下
     {
         if (tp_dev.sta & TP_PRES_DOWN) // 之前是被按下的
@@ -252,5 +253,7 @@ u8 FT6336_Scan(void)
             tp_dev.sta &= 0XE0; // 清除点有效标记
         }
     }
+    // if (t > 240)
+    //     t = 10; // 重新从10开始计数
     return res;
 }

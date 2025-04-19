@@ -30,13 +30,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "function.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include "lvgl.h"
 #include "lv_port_disp.h"
 #include "lv_port_indev.h"
-#include "lv_demos.h"
-#include "lv_demo_benchmark.h"
 #include "touch.h"
 #include "delay.h"
 #include "lcd.h"
@@ -147,6 +143,7 @@ int main(void)
     while (1) {
         // loop();
         lv_task_handler();
+        HAL_Delay(1);
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
