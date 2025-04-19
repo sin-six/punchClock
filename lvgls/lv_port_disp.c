@@ -13,6 +13,7 @@
 #include "lv_port_disp.h"
 #include <stdbool.h>
 #include "lcd.h"
+#include "spi.h"
 
 /*********************
  *      DEFINES

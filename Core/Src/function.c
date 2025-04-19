@@ -1,6 +1,5 @@
 #include "function.h"
-#include "GUI/gui.h"
-#include "LCD/lcd.h"
+#include "lcd.h"
 #include "RC522/RC522.h"
 #include "Status.h"
 #include "stm32f4xx_hal.h"
@@ -80,6 +79,7 @@ void ds3231Init(void)
     }
 }
 
+// RC522扫描卡
 void RC522Scan(void)
 {
     uint8_t Card_Type1[2];
@@ -137,6 +137,7 @@ void RC522Scan(void)
     }
 }
 
+// RC522写卡
 void RC522WriteCard(uint8_t *Card_Data)
 {
     uint8_t Card_Type1[2];
@@ -231,25 +232,6 @@ void setTime(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t mi
     DS3231_SetFullTime(hour, minute, 0);
 }
 
-// 渲染时钟
-void renderTime(void)
-{
-    char tmp[16];
-    sprintf(tmp, "%02d:%02d:%02d", nowTime.hour, nowTime.minute, nowTime.second);
-
-    LCD_ShowString(13, 24, 18, (uint8_t *)tmp, 0);
-}
-
-// 渲染人员信息
-void renderPeople(void)
-{
-    // TODO:渲染人员信息
-}
-
-void renderButton(void)
-{
-    LCD_ShowString(347, 31, 18, (uint8_t *)"Export", 0);
-}
 void Float2Str(char *str, float value)
 {
     int Head  = (int)value;
@@ -257,16 +239,6 @@ void Float2Str(char *str, float value)
     sprintf(str, "voltage:%d.%dv", Head, Point);
 }
 
-void renderBattery(void)
-{
-    // TODO:更新并渲染电池电量
-    uint32_t adcValue = HAL_ADC_GetValue(&hadc1);
-    float voltage     = ((float)adcValue * 3.3) / 4095.0f;
-    voltage *= 2.0f;
-    char tmp[16];
-    Float2Str(tmp, voltage);
-    LCD_ShowString(123, 17, 18, (uint8_t *)tmp, 0);
-}
 
 void handleEvent(void)
 {
@@ -414,7 +386,7 @@ void totalInit(void)
     status.mode = NORMALMOD;
 }
 /*
-*/
+ */
 void loop(void)
 {
     // TODO:主循环 一帧
@@ -430,13 +402,4 @@ void loop(void)
     handleEvent();
 
     HAL_Delay(10);
-}
-
-void ChangeTime()
-{
-    LCD_Fill(110, 135, 380, 225, BLACK);
-    // LCD_SetWindows(110, 135, 380, 225);
-    char timeStr[20] = "00  :  00";
-    LCD_ShowString(480 / 2 - 60, 320 / 2 - 18, 18, (uint8_t *)timeStr, 0);
-    Fill_Triangel(180, 135, 191, 115, 204, 134);
 }

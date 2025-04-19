@@ -30,16 +30,14 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "function.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include "lvgl.h"
 #include "lv_port_disp.h"
 #include "lv_port_indev.h"
-#include "lv_demos.h"
-#include "lv_demo_benchmark.h"
 #include "touch.h"
 #include "delay.h"
 #include "lcd.h"
+#include "gui_guider.h"
+#include "events_init.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -76,7 +74,7 @@ PUTCHAR_PROTOTYPE
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+lv_ui guider_ui;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -130,12 +128,14 @@ int main(void)
     // totalInit();
     delay_init(100);
     LCD_Init();
-    LCD_direction(1);
+    LCD_direction(3);
     TP_Init();
     lv_init();
     lv_port_disp_init();
     lv_port_indev_init();
-    lv_demo_benchmark();
+    setup_ui(&guider_ui);
+    events_init(&guider_ui);
+    // lv_demo_benchmark();
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -143,6 +143,7 @@ int main(void)
     while (1) {
         // loop();
         lv_task_handler();
+        HAL_Delay(1);
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

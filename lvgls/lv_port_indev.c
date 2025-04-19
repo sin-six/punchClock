@@ -176,7 +176,13 @@ void lv_port_indev_init(void)
 /*Initialize your touchpad*/
 static void touchpad_init(void)
 {
-    //FT6336_Init();
+    // uint8_t tmp = FT6336_Init();
+    // if (tmp == 1) {
+    //     while (true) {
+    //         HAL_UART_Transmit(&huart1, (uint8_t *)"FT6336_Init error\r\n", strlen("FT6336_Init error\r\n"), 100);
+    //         HAL_Delay(100);
+    //     }
+    // }
     /*Your code comes here*/
 }
 
@@ -204,7 +210,7 @@ static bool touchpad_is_pressed(void)
 {
     /*Your code comes here*/
     return FT6336_Scan();
-    //return false;
+    // return false;
 }
 
 /*Get the x and y coordinates if the touchpad is pressed*/
