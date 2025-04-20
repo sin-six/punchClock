@@ -123,7 +123,6 @@ LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_youyuan_12)
 LV_FONT_DECLARE(lv_font_youyuan_14)
 LV_FONT_DECLARE(lv_font_youyuan_25)
-LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_18)
 
 
 #ifdef __cplusplus
