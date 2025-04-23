@@ -12,20 +12,19 @@
 #include "delay.h"
 #include "DS3231.h"
 #include <stdbool.h>
-#include "AT24CXX.h"
+#include "at24cxx.h"
 #include "main.h"
 #include "adc.h"
 
 extern Status status;
 
-#define CARDEVENT 1
+#define CARDEVENT  1
 #define TOUCHEVENT 2
 
 #define DEBUG
 
 // 时间格式
-typedef struct Time
-{
+typedef struct Time {
     uint16_t year;
     uint8_t month;
     uint8_t day;
@@ -35,40 +34,35 @@ typedef struct Time
 } Time;
 
 // 打卡记录
-typedef struct signinIndex
-{
+typedef struct signinIndex {
     uint8_t number[12]; // 学号
     uint32_t startTime; // 开始时间
     uint32_t endTime;   // 结束时间
 } signinIndex;
 
 // 触摸事件
-typedef struct TouchEvent
-{
+typedef struct TouchEvent {
     uint16_t x;
     uint16_t y;
     uint8_t status;
 } TouchEvent;
 
 // 卡事件
-typedef struct CardEvent
-{
+typedef struct CardEvent {
     uint8_t number[12]; // 学号
     uint32_t time;      // 时间
     uint8_t status;     // 状态
 } CardEvent;
 
 // 总事件
-typedef struct Event
-{
+typedef struct Event {
     TouchEvent touchEvent;
     CardEvent cardEvent;
     uint8_t type;
 } TotalEvent;
 
 // 事件队列
-typedef struct EventQueue
-{
+typedef struct EventQueue {
     TotalEvent event[10]; // 事件数组
     uint8_t head;         // 队列头
     uint8_t tail;         // 队列尾
