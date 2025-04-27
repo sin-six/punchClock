@@ -54,7 +54,7 @@
 
 #if LV_USE_STDLIB_MALLOC == LV_STDLIB_BUILTIN
     /*Size of the memory available for `lv_malloc()` in bytes (>= 2kB)*/
-    #define LV_MEM_SIZE (160 * 1024U)          /*[bytes]*/
+    #define LV_MEM_SIZE (180 * 1024U)          /*[bytes]*/
 
     /*Size of the memory expand for `lv_malloc()` in bytes*/
     #define LV_MEM_POOL_EXPAND_SIZE 0
@@ -73,11 +73,11 @@
  *====================*/
 
 /*Default display refresh, input device read and animation step period.*/
-#define LV_DEF_REFR_PERIOD  10      /*[ms]*/
+#define LV_DEF_REFR_PERIOD  1      /*[ms]*/
 
 /*Default Dot Per Inch. Used to initialize default sizes such as widgets sized, style paddings.
  *(Not so important, you can adjust it to modify default sizes and spaces)*/
-#define LV_DPI_DEF 150     /*[px/inch]*/
+#define LV_DPI_DEF 100     /*[px/inch]*/
 
 /*=================
  * OPERATING SYSTEM
@@ -490,7 +490,7 @@
 #define LV_FONT_MONTSERRAT_18 0
 #define LV_FONT_MONTSERRAT_20 0
 #define LV_FONT_MONTSERRAT_22 0
-#define LV_FONT_MONTSERRAT_24 1
+#define LV_FONT_MONTSERRAT_24 0
 #define LV_FONT_MONTSERRAT_26 0
 #define LV_FONT_MONTSERRAT_28 0
 #define LV_FONT_MONTSERRAT_30 0
@@ -930,7 +930,7 @@
 
 /*1: Enable Pinyin input method*/
 /*Requires: lv_keyboard*/
-#define LV_USE_IME_PINYIN 0
+#define LV_USE_IME_PINYIN 1
 #if LV_USE_IME_PINYIN
     /*1: Use default thesaurus*/
     /*If you do not use the default thesaurus, be sure to use `lv_ime_pinyin` after setting the thesaurus*/
@@ -1047,7 +1047,7 @@
 /*Drivers for LCD devices connected via SPI/parallel port*/
 #define LV_USE_ST7735        0
 #define LV_USE_ST7789        0
-#define LV_USE_ST7796        1
+#define LV_USE_ST7796        0
 #define LV_USE_ILI9341       0
 
 #define LV_USE_GENERIC_MIPI (LV_USE_ST7735 | LV_USE_ST7789 | LV_USE_ST7796 | LV_USE_ILI9341)
@@ -1075,20 +1075,20 @@
 *==================*/
 
 /*Enable the examples to be built with the library*/
-#define LV_BUILD_EXAMPLES 1
+#define LV_BUILD_EXAMPLES 0
 
 /*===================
  * DEMO USAGE
  ====================*/
 
 /*Show some widget. It might be required to increase `LV_MEM_SIZE` */
-#define LV_USE_DEMO_WIDGETS 1
+#define LV_USE_DEMO_WIDGETS 0
 
 /*Demonstrate the usage of encoder and keyboard*/
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 0
 
 /*Benchmark your system*/
-#define LV_USE_DEMO_BENCHMARK 1
+#define LV_USE_DEMO_BENCHMARK 0
 
 /*Render test for each primitives. Requires at least 480x272 display*/
 #define LV_USE_DEMO_RENDER 0

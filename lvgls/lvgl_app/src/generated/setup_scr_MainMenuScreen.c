@@ -16,10 +16,6 @@
 
 
 
-int MainMenuScreen_clock_min_value = 52;
-int MainMenuScreen_clock_hour_value = 12;
-int MainMenuScreen_clock_sec_value = 32;
-char MainMenuScreen_clock_meridiem[] = "PM";
 void setup_scr_MainMenuScreen(lv_ui *ui)
 {
     //Write codes MainMenuScreen
@@ -210,114 +206,114 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
 
 
-    //Write codes MainMenuScreen_table_1
-    ui->MainMenuScreen_table_1 = lv_table_create(ui->MainMenuScreen_tileview_1_tile);
-    lv_obj_set_pos(ui->MainMenuScreen_table_1, 137, 3);
-    lv_obj_set_scrollbar_mode(ui->MainMenuScreen_table_1, LV_SCROLLBAR_MODE_OFF);
-    lv_table_set_column_count(ui->MainMenuScreen_table_1,2);
-    lv_table_set_row_count(ui->MainMenuScreen_table_1,13);
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,0,0,"姓名");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,1,0,"张三");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,2,0,"李四");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,3,0,"Citron");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,4,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,5,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,6,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,7,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,8,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,9,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,10,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,11,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,12,0,"Name");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,0,1,"学号");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,1,1,"$1");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,2,1,"$2");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,3,1,"$3");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,4,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,5,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,6,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,7,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,8,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,9,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,10,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,11,1,"Price");
-    lv_table_set_cell_value(ui->MainMenuScreen_table_1,12,1,"Price");
+    //Write codes MainMenuScreen_UserInfoTable
+    ui->MainMenuScreen_UserInfoTable = lv_table_create(ui->MainMenuScreen_tileview_1_tile);
+    lv_obj_set_pos(ui->MainMenuScreen_UserInfoTable, 137, 3);
+    lv_obj_set_scrollbar_mode(ui->MainMenuScreen_UserInfoTable, LV_SCROLLBAR_MODE_OFF);
+    lv_table_set_column_count(ui->MainMenuScreen_UserInfoTable,2);
+    lv_table_set_row_count(ui->MainMenuScreen_UserInfoTable,13);
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,0,0,"姓名");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,1,0,"张三");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,2,0,"李四");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,3,0,"Citron");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,4,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,5,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,6,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,7,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,8,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,9,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,10,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,11,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,12,0,"Name");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,0,1,"学号");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,1,1,"$1");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,2,1,"$2");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,3,1,"$3");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,4,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,5,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,6,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,7,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,8,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,9,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,10,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,11,1,"Price");
+    lv_table_set_cell_value(ui->MainMenuScreen_UserInfoTable,12,1,"Price");
 
-    //Write style for MainMenuScreen_table_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_pad_top(ui->MainMenuScreen_table_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_table_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->MainMenuScreen_table_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->MainMenuScreen_table_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->MainMenuScreen_table_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->MainMenuScreen_table_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_table_1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_width(ui->MainMenuScreen_table_1, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(ui->MainMenuScreen_table_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_color(ui->MainMenuScreen_table_1, lv_color_hex(0xd5dee6), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_side(ui->MainMenuScreen_table_1, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->MainMenuScreen_table_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->MainMenuScreen_table_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for MainMenuScreen_UserInfoTable, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_pad_top(ui->MainMenuScreen_UserInfoTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_UserInfoTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->MainMenuScreen_UserInfoTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->MainMenuScreen_UserInfoTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_UserInfoTable, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->MainMenuScreen_UserInfoTable, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_UserInfoTable, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->MainMenuScreen_UserInfoTable, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui->MainMenuScreen_UserInfoTable, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui->MainMenuScreen_UserInfoTable, lv_color_hex(0xd5dee6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_side(ui->MainMenuScreen_UserInfoTable, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->MainMenuScreen_UserInfoTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->MainMenuScreen_UserInfoTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write style for MainMenuScreen_table_1, Part: LV_PART_ITEMS, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_text_color(ui->MainMenuScreen_table_1, lv_color_hex(0x393c41), LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_table_1, &lv_font_youyuan_16, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->MainMenuScreen_table_1, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->MainMenuScreen_table_1, LV_TEXT_ALIGN_CENTER, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->MainMenuScreen_table_1, 0, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_width(ui->MainMenuScreen_table_1, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(ui->MainMenuScreen_table_1, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_color(ui->MainMenuScreen_table_1, lv_color_hex(0xd5dee6), LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_side(ui->MainMenuScreen_table_1, LV_BORDER_SIDE_FULL, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->MainMenuScreen_table_1, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_table_1, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->MainMenuScreen_table_1, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->MainMenuScreen_table_1, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    //Write style for MainMenuScreen_UserInfoTable, Part: LV_PART_ITEMS, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_text_color(ui->MainMenuScreen_UserInfoTable, lv_color_hex(0x393c41), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_UserInfoTable, &lv_font_youyuan_16, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->MainMenuScreen_UserInfoTable, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->MainMenuScreen_UserInfoTable, LV_TEXT_ALIGN_CENTER, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_UserInfoTable, 0, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->MainMenuScreen_UserInfoTable, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui->MainMenuScreen_UserInfoTable, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui->MainMenuScreen_UserInfoTable, lv_color_hex(0xd5dee6), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_side(ui->MainMenuScreen_UserInfoTable, LV_BORDER_SIDE_FULL, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->MainMenuScreen_UserInfoTable, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_UserInfoTable, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->MainMenuScreen_UserInfoTable, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->MainMenuScreen_UserInfoTable, 10, LV_PART_ITEMS|LV_STATE_DEFAULT);
 
-    //Write codes MainMenuScreen_btn_7
-    ui->MainMenuScreen_btn_7 = lv_button_create(ui->MainMenuScreen_userInfoPanel);
-    lv_obj_set_pos(ui->MainMenuScreen_btn_7, 3, 55);
-    lv_obj_set_size(ui->MainMenuScreen_btn_7, 117, 41);
-    ui->MainMenuScreen_btn_7_label = lv_label_create(ui->MainMenuScreen_btn_7);
-    lv_label_set_text(ui->MainMenuScreen_btn_7_label, "新建人员信息");
-    lv_label_set_long_mode(ui->MainMenuScreen_btn_7_label, LV_LABEL_LONG_WRAP);
-    lv_obj_align(ui->MainMenuScreen_btn_7_label, LV_ALIGN_CENTER, 0, 0);
-    lv_obj_set_style_pad_all(ui->MainMenuScreen_btn_7, 0, LV_STATE_DEFAULT);
-    lv_obj_set_width(ui->MainMenuScreen_btn_7_label, LV_PCT(100));
+    //Write codes MainMenuScreen_newUserInfoButton
+    ui->MainMenuScreen_newUserInfoButton = lv_button_create(ui->MainMenuScreen_userInfoPanel);
+    lv_obj_set_pos(ui->MainMenuScreen_newUserInfoButton, 3, 55);
+    lv_obj_set_size(ui->MainMenuScreen_newUserInfoButton, 117, 41);
+    ui->MainMenuScreen_newUserInfoButton_label = lv_label_create(ui->MainMenuScreen_newUserInfoButton);
+    lv_label_set_text(ui->MainMenuScreen_newUserInfoButton_label, "新建人员信息");
+    lv_label_set_long_mode(ui->MainMenuScreen_newUserInfoButton_label, LV_LABEL_LONG_WRAP);
+    lv_obj_align(ui->MainMenuScreen_newUserInfoButton_label, LV_ALIGN_CENTER, 0, 0);
+    lv_obj_set_style_pad_all(ui->MainMenuScreen_newUserInfoButton, 0, LV_STATE_DEFAULT);
+    lv_obj_set_width(ui->MainMenuScreen_newUserInfoButton_label, LV_PCT(100));
 
-    //Write style for MainMenuScreen_btn_7, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_bg_opa(ui->MainMenuScreen_btn_7, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->MainMenuScreen_btn_7, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_btn_7, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_width(ui->MainMenuScreen_btn_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->MainMenuScreen_btn_7, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->MainMenuScreen_btn_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->MainMenuScreen_btn_7, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_btn_7, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->MainMenuScreen_btn_7, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->MainMenuScreen_btn_7, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for MainMenuScreen_newUserInfoButton, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_newUserInfoButton, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->MainMenuScreen_newUserInfoButton, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_newUserInfoButton, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->MainMenuScreen_newUserInfoButton, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->MainMenuScreen_newUserInfoButton, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->MainMenuScreen_newUserInfoButton, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->MainMenuScreen_newUserInfoButton, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_newUserInfoButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->MainMenuScreen_newUserInfoButton, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->MainMenuScreen_newUserInfoButton, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes MainMenuScreen_btn_8
-    ui->MainMenuScreen_btn_8 = lv_button_create(ui->MainMenuScreen_userInfoPanel);
-    lv_obj_set_pos(ui->MainMenuScreen_btn_8, 1, 101);
-    lv_obj_set_size(ui->MainMenuScreen_btn_8, 122, 40);
-    ui->MainMenuScreen_btn_8_label = lv_label_create(ui->MainMenuScreen_btn_8);
-    lv_label_set_text(ui->MainMenuScreen_btn_8_label, "从SD卡导入人员信息");
-    lv_label_set_long_mode(ui->MainMenuScreen_btn_8_label, LV_LABEL_LONG_WRAP);
-    lv_obj_align(ui->MainMenuScreen_btn_8_label, LV_ALIGN_CENTER, 0, 0);
-    lv_obj_set_style_pad_all(ui->MainMenuScreen_btn_8, 0, LV_STATE_DEFAULT);
-    lv_obj_set_width(ui->MainMenuScreen_btn_8_label, LV_PCT(100));
+    //Write codes MainMenuScreen_ImportFromSDcard
+    ui->MainMenuScreen_ImportFromSDcard = lv_button_create(ui->MainMenuScreen_userInfoPanel);
+    lv_obj_set_pos(ui->MainMenuScreen_ImportFromSDcard, 1, 101);
+    lv_obj_set_size(ui->MainMenuScreen_ImportFromSDcard, 129, 45);
+    ui->MainMenuScreen_ImportFromSDcard_label = lv_label_create(ui->MainMenuScreen_ImportFromSDcard);
+    lv_label_set_text(ui->MainMenuScreen_ImportFromSDcard_label, "从SD卡导入人员信息");
+    lv_label_set_long_mode(ui->MainMenuScreen_ImportFromSDcard_label, LV_LABEL_LONG_WRAP);
+    lv_obj_align(ui->MainMenuScreen_ImportFromSDcard_label, LV_ALIGN_LEFT_MID, 0, 0);
+    lv_obj_set_style_pad_all(ui->MainMenuScreen_ImportFromSDcard, 0, LV_STATE_DEFAULT);
+    lv_obj_set_width(ui->MainMenuScreen_ImportFromSDcard_label, LV_PCT(100));
 
-    //Write style for MainMenuScreen_btn_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_bg_opa(ui->MainMenuScreen_btn_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->MainMenuScreen_btn_8, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_btn_8, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_width(ui->MainMenuScreen_btn_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->MainMenuScreen_btn_8, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->MainMenuScreen_btn_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->MainMenuScreen_btn_8, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_btn_8, &lv_font_youyuan_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->MainMenuScreen_btn_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->MainMenuScreen_btn_8, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for MainMenuScreen_ImportFromSDcard, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_ImportFromSDcard, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->MainMenuScreen_ImportFromSDcard, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_ImportFromSDcard, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->MainMenuScreen_ImportFromSDcard, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->MainMenuScreen_ImportFromSDcard, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->MainMenuScreen_ImportFromSDcard, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->MainMenuScreen_ImportFromSDcard, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_ImportFromSDcard, &lv_font_youyuan_14, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->MainMenuScreen_ImportFromSDcard, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->MainMenuScreen_ImportFromSDcard, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes MainMenuScreen_btn_6
     ui->MainMenuScreen_btn_6 = lv_button_create(ui->MainMenuScreen_userInfoPanel);
@@ -626,7 +622,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_ta_1
     ui->MainMenuScreen_ta_1 = lv_textarea_create(ui->MainMenuScreen_newUserInfo);
-    lv_obj_set_pos(ui->MainMenuScreen_ta_1, 112, 65);
+    lv_obj_set_pos(ui->MainMenuScreen_ta_1, 111, 65);
     lv_obj_set_size(ui->MainMenuScreen_ta_1, 195, 40);
     lv_textarea_set_text(ui->MainMenuScreen_ta_1, "");
     lv_textarea_set_placeholder_text(ui->MainMenuScreen_ta_1, "");
@@ -666,7 +662,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_ta_2
     ui->MainMenuScreen_ta_2 = lv_textarea_create(ui->MainMenuScreen_newUserInfo);
-    lv_obj_set_pos(ui->MainMenuScreen_ta_2, 113, 112);
+    lv_obj_set_pos(ui->MainMenuScreen_ta_2, 112, 111);
     lv_obj_set_size(ui->MainMenuScreen_ta_2, 195, 40);
     lv_textarea_set_text(ui->MainMenuScreen_ta_2, "");
     lv_textarea_set_placeholder_text(ui->MainMenuScreen_ta_2, "");
@@ -820,7 +816,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_hourChangeLabel
     ui->MainMenuScreen_hourChangeLabel = lv_label_create(ui->MainMenuScreen_changeTime);
-    lv_obj_set_pos(ui->MainMenuScreen_hourChangeLabel, 81, 98);
+    lv_obj_set_pos(ui->MainMenuScreen_hourChangeLabel, 92, 98);
     lv_obj_set_size(ui->MainMenuScreen_hourChangeLabel, 91, 34);
     lv_label_set_text(ui->MainMenuScreen_hourChangeLabel, "12");
     lv_label_set_long_mode(ui->MainMenuScreen_hourChangeLabel, LV_LABEL_LONG_WRAP);
@@ -843,7 +839,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_label_5
     ui->MainMenuScreen_label_5 = lv_label_create(ui->MainMenuScreen_changeTime);
-    lv_obj_set_pos(ui->MainMenuScreen_label_5, 129, 94);
+    lv_obj_set_pos(ui->MainMenuScreen_label_5, 132, 94);
     lv_obj_set_size(ui->MainMenuScreen_label_5, 100, 32);
     lv_label_set_text(ui->MainMenuScreen_label_5, "：");
     lv_label_set_long_mode(ui->MainMenuScreen_label_5, LV_LABEL_LONG_WRAP);
@@ -866,7 +862,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_hourUpButton
     ui->MainMenuScreen_hourUpButton = lv_imagebutton_create(ui->MainMenuScreen_changeTime);
-    lv_obj_set_pos(ui->MainMenuScreen_hourUpButton, 108, 63);
+    lv_obj_set_pos(ui->MainMenuScreen_hourUpButton, 118, 63);
     lv_obj_set_size(ui->MainMenuScreen_hourUpButton, 38, 31);
     lv_imagebutton_set_src(ui->MainMenuScreen_hourUpButton, LV_IMAGEBUTTON_STATE_RELEASED, &_up_triangle_RGB565A8_38x31, NULL, NULL);
     lv_imagebutton_set_src(ui->MainMenuScreen_hourUpButton, LV_IMAGEBUTTON_STATE_PRESSED, &_up_triangle_RGB565A8_38x31, NULL, NULL);
@@ -887,7 +883,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_hourUpButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_hourUpButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_hourUpButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_PRESSED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_hourUpButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_PRESSED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_hourUpButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_hourUpButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_hourUpButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
 
@@ -895,7 +891,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_hourUpButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_hourUpButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_hourUpButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_CHECKED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_hourUpButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_CHECKED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_hourUpButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_hourUpButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_hourUpButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
 
@@ -905,7 +901,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_minuteUpButton
     ui->MainMenuScreen_minuteUpButton = lv_imagebutton_create(ui->MainMenuScreen_changeTime);
-    lv_obj_set_pos(ui->MainMenuScreen_minuteUpButton, 200, 64);
+    lv_obj_set_pos(ui->MainMenuScreen_minuteUpButton, 197, 63);
     lv_obj_set_size(ui->MainMenuScreen_minuteUpButton, 38, 31);
     lv_imagebutton_set_src(ui->MainMenuScreen_minuteUpButton, LV_IMAGEBUTTON_STATE_RELEASED, &_up_triangle_RGB565A8_38x31, NULL, NULL);
     lv_imagebutton_set_src(ui->MainMenuScreen_minuteUpButton, LV_IMAGEBUTTON_STATE_PRESSED, &_up_triangle_RGB565A8_38x31, NULL, NULL);
@@ -926,7 +922,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_minuteUpButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_minuteUpButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_minuteUpButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_PRESSED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteUpButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_PRESSED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteUpButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_minuteUpButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_minuteUpButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
 
@@ -934,7 +930,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_minuteUpButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_minuteUpButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_minuteUpButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_CHECKED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteUpButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_CHECKED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteUpButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_minuteUpButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_minuteUpButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
 
@@ -944,7 +940,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_hourDownButton
     ui->MainMenuScreen_hourDownButton = lv_imagebutton_create(ui->MainMenuScreen_changeTime);
-    lv_obj_set_pos(ui->MainMenuScreen_hourDownButton, 108, 124);
+    lv_obj_set_pos(ui->MainMenuScreen_hourDownButton, 118, 124);
     lv_obj_set_size(ui->MainMenuScreen_hourDownButton, 38, 31);
     lv_imagebutton_set_src(ui->MainMenuScreen_hourDownButton, LV_IMAGEBUTTON_STATE_RELEASED, &_down_triangle_RGB565A8_38x31, NULL, NULL);
     lv_imagebutton_set_src(ui->MainMenuScreen_hourDownButton, LV_IMAGEBUTTON_STATE_PRESSED, &_down_triangle_RGB565A8_38x31, NULL, NULL);
@@ -965,7 +961,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_hourDownButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_hourDownButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_hourDownButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_PRESSED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_hourDownButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_PRESSED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_hourDownButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_hourDownButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_hourDownButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
 
@@ -973,7 +969,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_hourDownButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_hourDownButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_hourDownButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_CHECKED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_hourDownButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_CHECKED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_hourDownButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_hourDownButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_hourDownButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
 
@@ -983,7 +979,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
 
     //Write codes MainMenuScreen_minuteDownButton
     ui->MainMenuScreen_minuteDownButton = lv_imagebutton_create(ui->MainMenuScreen_changeTime);
-    lv_obj_set_pos(ui->MainMenuScreen_minuteDownButton, 200, 123);
+    lv_obj_set_pos(ui->MainMenuScreen_minuteDownButton, 197, 124);
     lv_obj_set_size(ui->MainMenuScreen_minuteDownButton, 38, 31);
     lv_imagebutton_set_src(ui->MainMenuScreen_minuteDownButton, LV_IMAGEBUTTON_STATE_RELEASED, &_down_triangle_RGB565A8_38x31, NULL, NULL);
     lv_imagebutton_set_src(ui->MainMenuScreen_minuteDownButton, LV_IMAGEBUTTON_STATE_PRESSED, &_down_triangle_RGB565A8_38x31, NULL, NULL);
@@ -1004,7 +1000,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_minuteDownButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_minuteDownButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_minuteDownButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_PRESSED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteDownButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_PRESSED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteDownButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_minuteDownButton, 255, LV_PART_MAIN|LV_STATE_PRESSED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_minuteDownButton, 0, LV_PART_MAIN|LV_STATE_PRESSED);
 
@@ -1012,7 +1008,7 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->MainMenuScreen_minuteDownButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_image_opa(ui->MainMenuScreen_minuteDownButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_color(ui->MainMenuScreen_minuteDownButton, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_CHECKED);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteDownButton, &lv_font_youyuan_12, LV_PART_MAIN|LV_STATE_CHECKED);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_minuteDownButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_text_opa(ui->MainMenuScreen_minuteDownButton, 255, LV_PART_MAIN|LV_STATE_CHECKED);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_minuteDownButton, 0, LV_PART_MAIN|LV_STATE_CHECKED);
 
@@ -1043,28 +1039,28 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_text_opa(ui->MainMenuScreen_btn_14, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->MainMenuScreen_btn_14, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes MainMenuScreen_btn_15
-    ui->MainMenuScreen_btn_15 = lv_button_create(ui->MainMenuScreen_changeTime);
-    lv_obj_set_pos(ui->MainMenuScreen_btn_15, 3, 2);
-    lv_obj_set_size(ui->MainMenuScreen_btn_15, 80, 45);
-    ui->MainMenuScreen_btn_15_label = lv_label_create(ui->MainMenuScreen_btn_15);
-    lv_label_set_text(ui->MainMenuScreen_btn_15_label, "确认");
-    lv_label_set_long_mode(ui->MainMenuScreen_btn_15_label, LV_LABEL_LONG_WRAP);
-    lv_obj_align(ui->MainMenuScreen_btn_15_label, LV_ALIGN_CENTER, 0, 0);
-    lv_obj_set_style_pad_all(ui->MainMenuScreen_btn_15, 0, LV_STATE_DEFAULT);
-    lv_obj_set_width(ui->MainMenuScreen_btn_15_label, LV_PCT(100));
+    //Write codes MainMenuScreen_ConfirmButton
+    ui->MainMenuScreen_ConfirmButton = lv_button_create(ui->MainMenuScreen_changeTime);
+    lv_obj_set_pos(ui->MainMenuScreen_ConfirmButton, 3, 2);
+    lv_obj_set_size(ui->MainMenuScreen_ConfirmButton, 80, 45);
+    ui->MainMenuScreen_ConfirmButton_label = lv_label_create(ui->MainMenuScreen_ConfirmButton);
+    lv_label_set_text(ui->MainMenuScreen_ConfirmButton_label, "确认");
+    lv_label_set_long_mode(ui->MainMenuScreen_ConfirmButton_label, LV_LABEL_LONG_WRAP);
+    lv_obj_align(ui->MainMenuScreen_ConfirmButton_label, LV_ALIGN_CENTER, 0, 0);
+    lv_obj_set_style_pad_all(ui->MainMenuScreen_ConfirmButton, 0, LV_STATE_DEFAULT);
+    lv_obj_set_width(ui->MainMenuScreen_ConfirmButton_label, LV_PCT(100));
 
-    //Write style for MainMenuScreen_btn_15, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_bg_opa(ui->MainMenuScreen_btn_15, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->MainMenuScreen_btn_15, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_btn_15, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_width(ui->MainMenuScreen_btn_15, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->MainMenuScreen_btn_15, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->MainMenuScreen_btn_15, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->MainMenuScreen_btn_15, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_btn_15, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->MainMenuScreen_btn_15, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->MainMenuScreen_btn_15, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for MainMenuScreen_ConfirmButton, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_ConfirmButton, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->MainMenuScreen_ConfirmButton, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_ConfirmButton, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->MainMenuScreen_ConfirmButton, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->MainMenuScreen_ConfirmButton, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->MainMenuScreen_ConfirmButton, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->MainMenuScreen_ConfirmButton, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_ConfirmButton, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->MainMenuScreen_ConfirmButton, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->MainMenuScreen_ConfirmButton, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes MainMenuScreen_eventPopUp
     ui->MainMenuScreen_eventPopUp = lv_obj_create(ui->MainMenuScreen);
@@ -1134,33 +1130,30 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->MainMenuScreen_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes MainMenuScreen_clock
-    static bool MainMenuScreen_clock_timer_enabled = false;
-    ui->MainMenuScreen_clock = lv_label_create(ui->MainMenuScreen);
-    lv_obj_set_pos(ui->MainMenuScreen_clock, 130, 0);
-    lv_obj_set_size(ui->MainMenuScreen_clock, 114, 36);
-    lv_obj_add_flag(ui->MainMenuScreen_clock, LV_OBJ_FLAG_CLICKABLE);
-    lv_label_set_text(ui->MainMenuScreen_clock, "12:52 PM");
-    if (!MainMenuScreen_clock_timer_enabled) {
-        lv_timer_create(MainMenuScreen_clock_timer, 1000, NULL);
-        MainMenuScreen_clock_timer_enabled = true;
-    }
+    //Write codes MainMenuScreen_label_11
+    ui->MainMenuScreen_label_11 = lv_label_create(ui->MainMenuScreen);
+    lv_obj_set_pos(ui->MainMenuScreen_label_11, 130, 0);
+    lv_obj_set_size(ui->MainMenuScreen_label_11, 89, 36);
+    lv_label_set_text(ui->MainMenuScreen_label_11, "");
+    lv_label_set_long_mode(ui->MainMenuScreen_label_11, LV_LABEL_LONG_WRAP);
 
-    //Write style for MainMenuScreen_clock, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_radius(ui->MainMenuScreen_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->MainMenuScreen_clock, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->MainMenuScreen_clock, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->MainMenuScreen_clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->MainMenuScreen_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->MainMenuScreen_clock, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->MainMenuScreen_clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->MainMenuScreen_clock, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_clock, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->MainMenuScreen_clock, 7, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->MainMenuScreen_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->MainMenuScreen_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->MainMenuScreen_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for MainMenuScreen_label_11, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->MainMenuScreen_label_11, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_label_11, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->MainMenuScreen_label_11, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->MainMenuScreen_label_11, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_label_11, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->MainMenuScreen_label_11, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->MainMenuScreen_label_11, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->MainMenuScreen_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes MainMenuScreen_calendar
     ui->MainMenuScreen_calendar = lv_label_create(ui->MainMenuScreen);
@@ -1186,6 +1179,53 @@ void setup_scr_MainMenuScreen(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->MainMenuScreen_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_left(ui->MainMenuScreen_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->MainMenuScreen_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes MainMenuScreen_Battery
+    ui->MainMenuScreen_Battery = lv_label_create(ui->MainMenuScreen);
+    lv_obj_set_pos(ui->MainMenuScreen_Battery, 214, 5);
+    lv_obj_set_size(ui->MainMenuScreen_Battery, 102, 29);
+    lv_label_set_text(ui->MainMenuScreen_Battery, "当前电量：");
+    lv_label_set_long_mode(ui->MainMenuScreen_Battery, LV_LABEL_LONG_WRAP);
+
+    //Write style for MainMenuScreen_Battery, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->MainMenuScreen_Battery, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_Battery, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->MainMenuScreen_Battery, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->MainMenuScreen_Battery, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->MainMenuScreen_Battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes MainMenuScreen_Clock
+    ui->MainMenuScreen_Clock = lv_label_create(ui->MainMenuScreen);
+    lv_obj_set_pos(ui->MainMenuScreen_Clock, 134, 10);
+    lv_obj_set_size(ui->MainMenuScreen_Clock, 80, 27);
+    lv_obj_add_flag(ui->MainMenuScreen_Clock, LV_OBJ_FLAG_CLICKABLE);
+    lv_label_set_text(ui->MainMenuScreen_Clock, "19:25");
+    lv_label_set_long_mode(ui->MainMenuScreen_Clock, LV_LABEL_LONG_WRAP);
+
+    //Write style for MainMenuScreen_Clock, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->MainMenuScreen_Clock, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->MainMenuScreen_Clock, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->MainMenuScreen_Clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->MainMenuScreen_Clock, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->MainMenuScreen_Clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //The custom code of MainMenuScreen.
 

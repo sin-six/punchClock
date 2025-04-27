@@ -10,16 +10,17 @@
  * 0x3E82-0xFFFF: 存储打卡信息
  */
 
-#define USER_INFO_ADDR  0x0002
+#define USER_INFO_ADDR 0x0002
 #define CHECK_INFO_ADDR 0x3E82
 
 /*人员信息记录
  * ID: 学生学号
  * Name: 学生姓名
  */
-__attribute__((aligned(8))) typedef struct UserInfo {
+__attribute__((aligned(8))) typedef struct UserInfo
+{
     uint64_t ID;
-    char Name[20];
+    const char Name[20];
 } UserInfo;
 
 /*打卡信息记录
@@ -27,7 +28,8 @@ __attribute__((aligned(8))) typedef struct UserInfo {
  * startTime: 打卡开始时间
  * endTime: 打卡结束时间
  */
-__attribute__((aligned(8))) typedef struct CheckInfo {
+__attribute__((aligned(8))) typedef struct CheckInfo
+{
     uint64_t ID;
     uint64_t startTime;
     uint64_t endTime;

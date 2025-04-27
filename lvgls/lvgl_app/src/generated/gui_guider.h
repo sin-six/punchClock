@@ -34,11 +34,11 @@ typedef struct
 	lv_obj_t *MainMenuScreen_userInfoPanel;
 	lv_obj_t *MainMenuScreen_tileview_1;
 	lv_obj_t *MainMenuScreen_tileview_1_tile;
-	lv_obj_t *MainMenuScreen_table_1;
-	lv_obj_t *MainMenuScreen_btn_7;
-	lv_obj_t *MainMenuScreen_btn_7_label;
-	lv_obj_t *MainMenuScreen_btn_8;
-	lv_obj_t *MainMenuScreen_btn_8_label;
+	lv_obj_t *MainMenuScreen_UserInfoTable;
+	lv_obj_t *MainMenuScreen_newUserInfoButton;
+	lv_obj_t *MainMenuScreen_newUserInfoButton_label;
+	lv_obj_t *MainMenuScreen_ImportFromSDcard;
+	lv_obj_t *MainMenuScreen_ImportFromSDcard_label;
 	lv_obj_t *MainMenuScreen_btn_6;
 	lv_obj_t *MainMenuScreen_btn_6_label;
 	lv_obj_t *MainMenuScreen_CheckInfoPanel;
@@ -76,14 +76,16 @@ typedef struct
 	lv_obj_t *MainMenuScreen_minuteDownButton_label;
 	lv_obj_t *MainMenuScreen_btn_14;
 	lv_obj_t *MainMenuScreen_btn_14_label;
-	lv_obj_t *MainMenuScreen_btn_15;
-	lv_obj_t *MainMenuScreen_btn_15_label;
+	lv_obj_t *MainMenuScreen_ConfirmButton;
+	lv_obj_t *MainMenuScreen_ConfirmButton_label;
 	lv_obj_t *MainMenuScreen_eventPopUp;
 	lv_obj_t *MainMenuScreen_btn_13;
 	lv_obj_t *MainMenuScreen_btn_13_label;
 	lv_obj_t *MainMenuScreen_label_8;
-	lv_obj_t *MainMenuScreen_clock;
+	lv_obj_t *MainMenuScreen_label_11;
 	lv_obj_t *MainMenuScreen_calendar;
+	lv_obj_t *MainMenuScreen_Battery;
+	lv_obj_t *MainMenuScreen_Clock;
 	lv_obj_t *g_kb_top_layer;
 }lv_ui;
 
@@ -123,7 +125,6 @@ LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_youyuan_12)
 LV_FONT_DECLARE(lv_font_youyuan_14)
 LV_FONT_DECLARE(lv_font_youyuan_25)
-LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_18)
 
 
 #ifdef __cplusplus

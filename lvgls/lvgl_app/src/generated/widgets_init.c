@@ -91,20 +91,6 @@ void digital_clock_count(int * hour, int * minute, int * seconds, char * meridie
     }
 }
 
-
-extern int MainMenuScreen_clock_hour_value;
-extern int MainMenuScreen_clock_min_value;
-extern int MainMenuScreen_clock_sec_value;
-extern char MainMenuScreen_clock_meridiem[];
-
-void MainMenuScreen_clock_timer(lv_timer_t *timer)
-{
-    digital_clock_count(&MainMenuScreen_clock_hour_value, &MainMenuScreen_clock_min_value, &MainMenuScreen_clock_sec_value, MainMenuScreen_clock_meridiem);
-    if (lv_obj_is_valid(guider_ui.MainMenuScreen_clock))
-    {
-        lv_label_set_text_fmt(guider_ui.MainMenuScreen_clock, "%d:%02d %s", MainMenuScreen_clock_hour_value, MainMenuScreen_clock_min_value, MainMenuScreen_clock_meridiem);
-    }
-}
 static lv_obj_t * MainMenuScreen_calendar_calendar;
 
 void MainMenuScreen_calendar_event_handler(lv_event_t *e)

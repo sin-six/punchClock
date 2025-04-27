@@ -18,30 +18,6 @@
     "files": [],
     "folders": [
       {
-        "name": "lvgl_demo",
-        "files": [
-          {
-            "path": "lvgls/lvgl/demos/lv_demos.c"
-          },
-          {
-            "path": "../LVGL_EIDETest/lvgls/lvgl/demos/widgets/assets/img_clothes.c"
-          },
-          {
-            "path": "../LVGL_EIDETest/lvgls/lvgl/demos/widgets/assets/img_demo_widgets_avatar.c"
-          },
-          {
-            "path": "../LVGL_EIDETest/lvgls/lvgl/demos/widgets/assets/img_demo_widgets_needle.c"
-          },
-          {
-            "path": "../LVGL_EIDETest/lvgls/lvgl/demos/widgets/assets/img_lvgl_logo.c"
-          },
-          {
-            "path": "../LVGL_EIDETest/lvgls/lvgl/demos/widgets/lv_demo_widgets.c"
-          }
-        ],
-        "folders": []
-      },
-      {
         "name": "lvgl_porting",
         "files": [
           {
@@ -52,6 +28,18 @@
           },
           {
             "path": "lvgls/lv_port_indev.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "eventHandler",
+        "files": [
+          {
+            "path": "Core/Src/eventHandler.c"
+          },
+          {
+            "path": "Core/Inc/eventHandler.h"
           }
         ],
         "folders": []
@@ -84,17 +72,11 @@
         },
         "options": "null"
       },
-      "uploader": "STLink",
+      "uploader": "Custom",
       "uploadConfig": {
         "bin": "",
-        "proType": "SWD",
-        "resetMode": "default",
-        "runAfterProgram": true,
-        "speed": 4000,
-        "address": "0x08000000",
-        "elFile": "None",
-        "optionBytes": ".eide/debug.st.option.bytes.ini",
-        "otherCmds": ""
+        "commandLine": "st-flash --format ihex --reset write ${programFile}",
+        "eraseChipCommand": "st-flash erase"
       },
       "uploadConfigMap": {
         "JLink": {
@@ -106,6 +88,17 @@
           },
           "proType": 1,
           "speed": 8000,
+          "otherCmds": ""
+        },
+        "STLink": {
+          "bin": "",
+          "proType": "SWD",
+          "resetMode": "default",
+          "runAfterProgram": true,
+          "speed": 4000,
+          "address": "0x08000000",
+          "elFile": "None",
+          "optionBytes": ".eide/debug.st.option.bytes.ini",
           "otherCmds": ""
         }
       },
@@ -158,7 +151,8 @@
           "lvgls/lvgl_app/src/generated/guider_customer_fonts",
           "lvgls/lvgl_app/src/generated/guider_fonts",
           "lvgls/lvgl_app/src/generated/images",
-          "lvgls/lvgl_app/src/custom"
+          "lvgls/lvgl_app/src/custom",
+          "../../../usr/arm-none-eabi/include"
         ],
         "libList": [
           "lvgls/lvgl",
@@ -177,9 +171,15 @@
           "afterBuildTasks": [
             {
               "name": "cp compile_commands.json",
-              "disable": false,
+              "disable": true,
               "abortAfterFailed": false,
               "command": "bash -c \"cp build/${ConfigName}/compile_commands.json build/compile_commands.json\""
+            },
+            {
+              "name": "cp compile_commands.json(linux)",
+              "disable": false,
+              "abortAfterFailed": false,
+              "command": "cp build/${ConfigName}/compile_commands.json build/compile_commands.json"
             }
           ],
           "global": {
@@ -189,7 +189,7 @@
           "c/cpp-compiler": {
             "language-c": "c11",
             "language-cpp": "c++11",
-            "optimization": "level-3",
+            "optimization": "level-fast",
             "warnings": "all-warnings",
             "one-elf-section-per-function": true,
             "one-elf-section-per-data": true
