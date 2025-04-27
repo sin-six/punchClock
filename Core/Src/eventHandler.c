@@ -174,10 +174,12 @@ void MainMenuScreen_Clock_event_handler(lv_event_t *e)
     case LV_EVENT_CLICKED:
     {
         char *time = lv_label_get_text(guider_ui.MainMenuScreen_Clock);
-        int hour, minute;
-        sscanf(time, "%02d:%02d", &hour, &minute);
-        lv_label_set_text_fmt(guider_ui.MainMenuScreen_hourChangeLabel, "%02d", hour);
-        lv_label_set_text_fmt(guider_ui.MainMenuScreen_minuteChangeLabel, "%02d", minute);
+        int tmphour, tmpminute;
+        sscanf(time, "%02d:%02d", &tmphour, &tmpminute);
+        lv_label_set_text_fmt(guider_ui.MainMenuScreen_hourChangeLabel, "%02d", tmphour);
+        lv_label_set_text_fmt(guider_ui.MainMenuScreen_minuteChangeLabel, "%02d", tmpminute);
+        hour = tmphour;
+        minute = tmpminute;
         lv_obj_remove_flag(guider_ui.MainMenuScreen_changeTime, LV_OBJ_FLAG_HIDDEN);
         break;
     }
@@ -230,7 +232,7 @@ void myLVGL_UIInit(void)
     uint8_t FiresMinute = DS3231_GetMinute();
     lv_label_set_text_fmt(guider_ui.MainMenuScreen_Clock, "%02d:%02d", firesHour, FiresMinute);
 
-    lv_timer_create(MainMenuScreen_digital_clock_1_timer, 60000, NULL);
+    lv_timer_create(MainMenuScreen_digital_clock_1_timer, 10000, NULL);
 
     // 日期初始化
     uint16_t year = DS3231_GetYear();
