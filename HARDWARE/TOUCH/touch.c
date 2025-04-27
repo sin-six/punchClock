@@ -56,7 +56,6 @@
 #include "delay.h"
 #include "stdlib.h"
 #include "math.h"
-#include "gui.h"
 
 _m_tp_dev tp_dev =
     {

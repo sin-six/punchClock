@@ -34,14 +34,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "function.h"
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "lvgl.h"
 #include "lv_port_disp.h"
 #include "lv_port_indev.h"
-#include "lv_demos.h"
-#include "lv_demo_benchmark.h"
 #include "touch.h"
 #include "delay.h"
 #include "lcd.h"
@@ -192,17 +189,6 @@ int main(void)
     while (1) {
         // loop();
         lv_task_handler();
-        
-        //rc
-        RC522Scan();
-        
-        
-
-        // Add any additional processing or handling here if needed
-        // For example, you might want to add a delay or check for specific conditions
-
-
-
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

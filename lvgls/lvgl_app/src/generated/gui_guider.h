@@ -21,7 +21,7 @@ typedef struct
   
 	lv_obj_t *MainMenuScreen;
 	bool MainMenuScreen_del;
-	lv_obj_t *MainMenuScreen_Menu;
+	lv_obj_t *MainMenuScreen_MainMenu;
 	lv_obj_t *MainMenuScreen_label_1;
 	lv_obj_t *MainMenuScreen_userInfoButton;
 	lv_obj_t *MainMenuScreen_userInfoButton_label;
@@ -31,14 +31,60 @@ typedef struct
 	lv_obj_t *MainMenuScreen_btn_4_label;
 	lv_obj_t *MainMenuScreen_btn_5;
 	lv_obj_t *MainMenuScreen_btn_5_label;
-	lv_obj_t *MainMenuScreen_userInfo;
+	lv_obj_t *MainMenuScreen_userInfoPanel;
 	lv_obj_t *MainMenuScreen_tileview_1;
 	lv_obj_t *MainMenuScreen_tileview_1_tile;
 	lv_obj_t *MainMenuScreen_table_1;
+	lv_obj_t *MainMenuScreen_btn_7;
+	lv_obj_t *MainMenuScreen_btn_7_label;
+	lv_obj_t *MainMenuScreen_btn_8;
+	lv_obj_t *MainMenuScreen_btn_8_label;
 	lv_obj_t *MainMenuScreen_btn_6;
 	lv_obj_t *MainMenuScreen_btn_6_label;
-	lv_obj_t *MainMenuScreen_digital_clock_1;
-	lv_obj_t *MainMenuScreen_datetext_1;
+	lv_obj_t *MainMenuScreen_CheckInfoPanel;
+	lv_obj_t *MainMenuScreen_tileview_2;
+	lv_obj_t *MainMenuScreen_tileview_2_tile;
+	lv_obj_t *MainMenuScreen_table_2;
+	lv_obj_t *MainMenuScreen_btn_10;
+	lv_obj_t *MainMenuScreen_btn_10_label;
+	lv_obj_t *MainMenuScreen_btn_9;
+	lv_obj_t *MainMenuScreen_btn_9_label;
+	lv_obj_t *MainMenuScreen_About;
+	lv_obj_t *MainMenuScreen_aboutReturnButton;
+	lv_obj_t *MainMenuScreen_aboutReturnButton_label;
+	lv_obj_t *MainMenuScreen_designerInfoLabel;
+	lv_obj_t *MainMenuScreen_newUserInfo;
+	lv_obj_t *MainMenuScreen_label_7;
+	lv_obj_t *MainMenuScreen_ta_1;
+	lv_obj_t *MainMenuScreen_ta_2;
+	lv_obj_t *MainMenuScreen_label_6;
+	lv_obj_t *MainMenuScreen_btn_11;
+	lv_obj_t *MainMenuScreen_btn_11_label;
+	lv_obj_t *MainMenuScreen_btn_12;
+	lv_obj_t *MainMenuScreen_btn_12_label;
+	lv_obj_t *MainMenuScreen_changeTime;
+	lv_obj_t *MainMenuScreen_minuteChangeLabel;
+	lv_obj_t *MainMenuScreen_hourChangeLabel;
+	lv_obj_t *MainMenuScreen_label_5;
+	lv_obj_t *MainMenuScreen_hourUpButton;
+	lv_obj_t *MainMenuScreen_hourUpButton_label;
+	lv_obj_t *MainMenuScreen_minuteUpButton;
+	lv_obj_t *MainMenuScreen_minuteUpButton_label;
+	lv_obj_t *MainMenuScreen_hourDownButton;
+	lv_obj_t *MainMenuScreen_hourDownButton_label;
+	lv_obj_t *MainMenuScreen_minuteDownButton;
+	lv_obj_t *MainMenuScreen_minuteDownButton_label;
+	lv_obj_t *MainMenuScreen_btn_14;
+	lv_obj_t *MainMenuScreen_btn_14_label;
+	lv_obj_t *MainMenuScreen_btn_15;
+	lv_obj_t *MainMenuScreen_btn_15_label;
+	lv_obj_t *MainMenuScreen_eventPopUp;
+	lv_obj_t *MainMenuScreen_btn_13;
+	lv_obj_t *MainMenuScreen_btn_13_label;
+	lv_obj_t *MainMenuScreen_label_8;
+	lv_obj_t *MainMenuScreen_clock;
+	lv_obj_t *MainMenuScreen_calendar;
+	lv_obj_t *g_kb_top_layer;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -67,13 +113,16 @@ extern lv_ui guider_ui;
 
 
 void setup_scr_MainMenuScreen(lv_ui *ui);
+LV_IMAGE_DECLARE(_up_triangle_RGB565A8_38x31);
+LV_IMAGE_DECLARE(_down_triangle_RGB565A8_38x31);
 
-LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_24)
+LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_25)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_youyuan_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
-LV_FONT_DECLARE(lv_font_youyuan_10)
 LV_FONT_DECLARE(lv_font_youyuan_12)
+LV_FONT_DECLARE(lv_font_youyuan_14)
+LV_FONT_DECLARE(lv_font_youyuan_25)
 
 
 #ifdef __cplusplus

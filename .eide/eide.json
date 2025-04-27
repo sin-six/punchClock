@@ -8,17 +8,6 @@
     "Middlewares",
     "Drivers",
     "HARDWARE",
-    "lvgls/lvgl/demos/benchmark",
-    "lvgls/lvgl/demos/flex_layout",
-    "lvgls/lvgl/demos/keypad_encoder",
-    "lvgls/lvgl/demos/multilang",
-    "lvgls/lvgl/demos/music",
-    "lvgls/lvgl/demos/render",
-    "lvgls/lvgl/demos/scroll",
-    "lvgls/lvgl/demos/stress",
-    "lvgls/lvgl/demos/transform",
-    "lvgls/lvgl/demos/vector_graphic",
-    "lvgls/lvgl/demos/widgets",
     "lvgls/lvgl/src",
     "lvgls/lvgl_app",
     "lvgls/lvgl_app/patches",
@@ -80,7 +69,8 @@
       "excludeList": [
         "<virtual_root>/lvgl_demo",
         "<virtual_root>/guider",
-        "lvgls/lvgl_app/src/main.c"
+        "lvgls/lvgl_app/src/main.c",
+        "Core/Src/test.c"
       ],
       "toolchain": "GCC",
       "compileConfig": {
@@ -199,7 +189,7 @@
           "c/cpp-compiler": {
             "language-c": "c11",
             "language-cpp": "c++11",
-            "optimization": "level-fast",
+            "optimization": "level-3",
             "warnings": "all-warnings",
             "one-elf-section-per-function": true,
             "one-elf-section-per-data": true

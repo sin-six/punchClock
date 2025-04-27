@@ -96,5 +96,13 @@ void video_play(lv_ui *ui)
 
 void init_keyboard(lv_ui *ui)
 {
-
+    ui->g_kb_top_layer = lv_keyboard_create(lv_layer_top());
+    lv_obj_t * pinyin_ime = lv_ime_pinyin_create(lv_layer_top());
+    lv_ime_pinyin_set_keyboard(pinyin_ime, ui->g_kb_top_layer);
+    lv_ime_pinyin_set_mode(pinyin_ime, LV_IME_PINYIN_MODE_K26);
+    lv_obj_set_style_text_font(pinyin_ime, &lv_font_youyuan_16, 0);
+    lv_ime_pinyin_set_dict(pinyin_ime, gg_pinyin_dict);
+    lv_obj_add_event_cb(ui->g_kb_top_layer, kb_event_cb, LV_EVENT_ALL, NULL);
+    lv_obj_add_flag(ui->g_kb_top_layer, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_set_style_text_font(ui->g_kb_top_layer, &lv_font_youyuan_16, LV_PART_MAIN|LV_STATE_DEFAULT);
 }
