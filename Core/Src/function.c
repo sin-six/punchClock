@@ -3,7 +3,9 @@
 #include "RC522/RC522.h"
 #include "Status.h"
 #include "stm32f4xx_hal.h"
+#include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 #define MAX_CHECK_RECORDS 10
 
@@ -85,28 +87,11 @@ void ds3231Init(void)
 
 
 
-//rc
-extern CheckInfo checkRecords[MAX_CHECK_RECORDS] = {0}; // 全局打卡记录数组
-extern int checkRecordCount = 0;                        // 记录计数器
 
-
-// 根据学号查找打卡记录索引（-1表示未找到）
-int find_student_record(uint64_t studentID) {
-    for (int i = 0; i < checkRecordCount; i++) {
-        if (checkRecords[i].ID == studentID && checkRecords[i].endTime == 0) {
-            return i; // 找到未结束的打卡记录
-        }
-    }
-    return -1; // 未找到或记录已结束
-}
-
-
-
-//
 
 
 // RC522扫描卡
-void RC522Scan(void)
+uint64_t RC522Scan(void)
 {
     uint8_t Card_Type1[2];
     uint8_t Card_ID[4];
@@ -130,7 +115,7 @@ void RC522Scan(void)
 #ifdef DEBUG
             printf("Anticoll Error\r\n");
 #endif
-            return;
+            return 0;
         }
 
         status = PcdSelect(Card_ID); // 选卡
@@ -139,7 +124,7 @@ void RC522Scan(void)
 #ifdef DEBUG
             printf("Select Card Error\r\n");
 #endif
-            return;
+            return 0;
         }
 
         status = PcdAuthState(PICC_AUTHENT1A, 5, Card_KEY, Card_ID); // 验证密码
@@ -147,70 +132,42 @@ void RC522Scan(void)
 #ifdef DEBUG
             printf("Auth Error\r\n");
 #endif
-            return;
+            return 0;
         }
         status = PcdRead(6, Card_Data); // 读数据
         if (status != MI_OK) {
 #ifdef DEBUG
             printf("Read Error\r\n");
 #endif
-            return;
-        } else {
-            // TODO:处理学号以及校验码
+            return 0;
+        }         // 解析学号（这里假设学号为前4字节数据）
+        studentID = ((uint64_t)Card_Data[0] << 24) |
+        ((uint64_t)Card_Data[1] << 16) |
+        ((uint64_t)Card_Data[2] << 8) |
+        Card_Data[3];
 
-            // 解析学号（这里假设学号为前4字节数据）
-            studentID = ((uint64_t)Card_Data[0] << 24) |
-                ((uint64_t)Card_Data[1] << 16) |
-                ((uint64_t)Card_Data[2] << 8) |
-                Card_Data[3];
-
-                int recordIndex = find_student_record(studentID);
-                if (recordIndex != -1) {
-                    // 存在未结束的打卡记录，标记为结束时间
-                    checkRecords[recordIndex].endTime = currentTime;
-
-                    //数据存储进EEPROM里
-                    
-
-
-                    
-
-        #ifdef DEBUG
-                    printf("Student %llu End Time: %llu\r\n", (unsigned long long)studentID, currentTime);
-        #endif
-                } else {
-                    // 无未结束记录，创建新的开始记录
-                    if (checkRecordCount < MAX_CHECK_RECORDS) {
-                        checkRecords[checkRecordCount].ID = studentID;
-                        checkRecords[checkRecordCount].startTime = currentTime;
-                        checkRecords[checkRecordCount].endTime = 0;
-                        checkRecordCount++;
-
-                        //数据存储进EEPROM里
-
-
-
-
-
-        #ifdef DEBUG
-                        printf("Student %llu Start Time: %llu\r\n", (unsigned long long)studentID, currentTime);
-        #endif
-                    } else {
-        #ifdef DEBUG
-                        printf("Max Record Reached!\r\n");
-        #endif
-                    }
-                }
-
-
+    // 简单的校验码处理，假设校验码为第5字节
+         uint8_t checksum = Card_Data[4];
+         uint8_t calculated_checksum = 0;
+         for (int i = 0; i < 4; i++) {
+         calculated_checksum ^= Card_Data[i];
+         }
+         if (checksum != calculated_checksum) {
+            
+#ifdef DEBUG
+printf("Checksum Error\r\n");
+#endif
+        PcdHalt();
+        return 0;
         }
-        status = PcdHalt(); // 停止卡片
-        return;
+
+        PcdHalt(); // 停止卡片
+        return studentID;
     } else {
 #ifdef DEBUG
         printf("No Card\r\n");
 #endif
-        return;
+        return 0;
     }
 }
 

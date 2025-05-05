@@ -34,8 +34,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "function.h"
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "lvgl.h"
 #include "lv_port_disp.h"
 #include "lv_port_indev.h"
@@ -48,6 +50,7 @@
 ///rc
 #include "dataStruct.h"
 #include "function.h"
+#include "hash.h"
 
 ////
 
@@ -84,24 +87,9 @@ PUTCHAR_PROTOTYPE
 /* USER CODE BEGIN PV */
 
 ///rc
-#define MAX_CHECK_RECORDS 10
-CheckInfo checkRecords[MAX_CHECK_RECORDS] = {0}; // 全局打卡记录数组
-int checkRecordCount = 0;                        // 记录计数器
-
-
-// 根据学号查找打卡记录索引（-1表示未找到）
-int find_student_record(uint64_t studentID) {
-    for (int i = 0; i < checkRecordCount; i++) {
-        if (checkRecords[i].ID == studentID && checkRecords[i].endTime == 0) {
-            return i; // 找到未结束的打卡记录
-        }
-    }
-    return -1; // 未找到或记录已结束
-}
 
 
 
-///
 
 
 
@@ -178,6 +166,8 @@ int main(void)
     RC522_Init();
 
     ////
+
+    
     // Initialize the event queue
 
 
@@ -186,9 +176,57 @@ int main(void)
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
+    HashTable *ht = createHashTable();//初始化hash
+    if (ht == NULL) {
+        return 1;
+    }
+
+
     while (1) {
         // loop();
         lv_task_handler();
+        
+        uint64_t studentID =  RC522Scan() ;  //读卡成功，返回学生ID
+        if(studentID)
+        {
+            if(search(ht,studentID)!=NULL)//存在学生studentID
+            {
+                HashNode* student = search(ht,studentID);
+                if (student != NULL) {
+                    uint64_t punchTime = get_current_time();
+                    insertPunchRecord(ht, studentID, punchTime);
+                    if (student->punchCount == 1) {
+                        // 第一次打卡
+                        //写入eeprom
+                        //student->startTime
+
+
+                        
+                    } else {
+                        // 第二次打卡
+                        //写入eeprom
+                        
+                    }
+                }
+                else{//第二次打卡
+                    //写入eeprom
+                    uint64_t punchTime = get_current_time();
+                    insertPunchRecord(ht, studentID, punchTime);
+                    HashNode *newStudent = search(ht, studentID);
+                    //把newStudent写入eeprom//
+
+
+                }
+
+                
+            }
+            else{//不存在此学生
+                insertPunchRecord(ht,studentID, get_current_time());//添加该学生,并开始打卡
+            }
+        }
+
+
+        
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

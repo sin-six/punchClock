@@ -503,7 +503,7 @@ extern "C"
     }
 
 
-    // 获取当前时间并格式化为 2025：04：23：20：28：20 格式
+    // 获取当前时间并格式化为 2025：04：23：20：28：20 格式20250423202820
 uint64_t get_current_time(void) {
     uint16_t year = DS3231_GetYear();
     uint8_t month = DS3231_GetMonth();

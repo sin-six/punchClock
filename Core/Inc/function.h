@@ -90,7 +90,7 @@ bool popEvent(TotalEvent *event); // 弹出事件
 int16_t calculate_weekday(int16_t year, int16_t month, int16_t day); // 计算星期几
 void ds3231Init(void);                                               // DS3231上电检查
 
-void RC522Scan(void);                    // RC522读卡
+uint64_t RC522Scan(void);            // RC522读卡
 void RC522WriteCard(uint8_t *Card_Data); // RC522写卡
 
 void at24Init(void); // AT24初始化
